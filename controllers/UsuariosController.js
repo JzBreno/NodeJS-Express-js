@@ -8,14 +8,15 @@ class UsuarioController{
     }
 
     ConsultarPorID(resquest, response){
-        
-        return UsuarioModel.ConsultarPorID();
+        const id = resquest.params.id;
+        const dados = UsuarioModel.ConsultarPorID(id);
+        return response.json(dados);
     }
     //chamando o criar de models e passando os dados de body do insomnia
     criar(resquest, response){   
         const body = resquest.body;
         UsuarioModel.criar(body);
-        return response.status(200).json({
+        return response.status(201).json({ //201 codigo que diz que a criacao foi um sucesso
             message: "Usuario cadastrado com Sucesso!"
         });
     }

@@ -10,7 +10,7 @@ const usuariosController = new UsuariosController;
 //nessas rotas usamos o express para simplificar nossas rotas
 
 UsuarioRotas.get('/users', usuariosController.listar);//essa requisicao(callback) retona uma request e uma response
- 
+UsuarioRotas.get('/users/:id', usuariosController.ConsultarPorID);
 UsuarioRotas.post('/users', usuariosController.criar);//essa requisicao(callback) retona uma request e uma response
 
 UsuarioRotas.put('/users', usuariosController.atualizar);//essa requisicao(callback) retona uma request e uma response
